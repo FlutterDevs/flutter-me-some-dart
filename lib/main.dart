@@ -104,7 +104,8 @@ class MyApp extends StatelessWidget {
             mainAxisSpacing: 8.0,
             crossAxisSpacing: 8.0,
           ),
-          itemCount: data?.length ?? 0,
+          // itemCount: data?.length ?? 0,
+          itemCount: universities?.length ?? 0,
           itemBuilder: (context, index) {
             return Material(
               color: Colors.blueGrey[100],
@@ -121,7 +122,8 @@ class MyApp extends StatelessWidget {
                     child: Padding(
                       padding: const EdgeInsets.all(8.0),
                       child: Image.network(
-                        data[index]['logo'],
+                        // data[index]['logo'],
+                        universities[index].logo,
                         // width: 150,
                         // height: 150,
                       ),
@@ -134,9 +136,11 @@ class MyApp extends StatelessWidget {
                         mainAxisAlignment: MainAxisAlignment.end,
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          Text(data[index]['name']),
+                          // Text(data[index]['name']),
+                          Text(universities[index].name),
                           Text(
-                            '(${data[index]['city']})',
+                            // '(${data[index]['city']})',
+                            '(${universities[index].city})',
                             style: TextStyle(fontSize: 10.0),
                           ),
                         ],
